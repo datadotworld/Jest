@@ -32,19 +32,6 @@
         <url>https://github.com/datadotworld/Jest.git</url>
     </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>release-local</id>
-            <name>Internal Releases</name>
-            <url>https://dataworld.artifactoryonline.com/dataworld/libs-release-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshot-local</id>
-            <name>Internal Snapshots</name>
-            <url>https://dataworld.artifactoryonline.com/dataworld/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <developers>
         <developer>
             <id>TheKingOfTheEast</id>
@@ -95,6 +82,7 @@
         <plugin.sonatype.version>1.6.7</plugin.sonatype.version>
         <plugin.gpg.version>1.6</plugin.gpg.version>
     </properties>
+
     <build>
         <defaultGoal>install</defaultGoal>
         <plugins>
@@ -195,6 +183,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
         <resources>
             <resource>
