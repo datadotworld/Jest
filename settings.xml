@@ -13,11 +13,6 @@
             <username>${ARTIFACTORY_USERNAME}</username>
             <password>${ARTIFACTORY_PASSWORD}</password>
         </server>
-        <server>
-            <id>release-local</id>
-            <username>${ARTIFACTORY_USERNAME}</username>
-            <password>${ARTIFACTORY_PASSWORD}</password>
-        </server>
     </servers>
     <profiles>
         <profile>
@@ -28,8 +23,8 @@
                         <enabled>false</enabled>
                     </snapshots>
                     <id>central</id>
-                    <name>dataworld-releases</name>
-                    <url>https://dataworld.jfrog.io/dataworld/libs-release-local</url>
+                    <name>libs-release</name>
+                    <url>https://dataworld.artifactoryonline.com/dataworld/libs-release</url>
                 </repository>
                 <repository>
                     <snapshots/>
