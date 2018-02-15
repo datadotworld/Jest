@@ -32,6 +32,19 @@
         <url>https://github.com/datadotworld/Jest.git</url>
     </scm>
 
+    <distributionManagement>
+        <repository>
+            <id>release-local</id>
+            <name>Internal Releases</name>
+            <url>https://dataworld.artifactoryonline.com/dataworld/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot-local</id>
+            <name>Internal Snapshots</name>
+            <url>https://dataworld.artifactoryonline.com/dataworld/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <developers>
         <developer>
             <id>TheKingOfTheEast</id>
