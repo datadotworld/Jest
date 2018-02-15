@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -26,16 +27,17 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:searchbox-io/Jest.git</connection>
-        <developerConnection>scm:git:git@github.com:searchbox-io/Jest.git</developerConnection>
-        <url>git@github.com:searchbox-io/Jest.git</url>
+        <connection>scm:git:git@github.com:datadotworld/Jest.git</connection>
+        <developerConnection>scm:git:git@github.com:datadotworld/Jest.git</developerConnection>
+        <url>git@github.com:datadotworld/Jest.git</url>
     </scm>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
+        <repository>
+            <id>release-local</id>
+            <name>Internal Releases</name>
+            <url>https://dataworld.artifactoryonline.com/dataworld/libs-release-local</url>
+        </repository>
     </distributionManagement>
 
     <developers>
@@ -165,7 +167,7 @@
                     <maxmem>256m</maxmem>
                     <!-- aggregated reports for multi-module projects -->
                     <aggregate>true</aggregate>
-                    <check />
+                    <check/>
                 </configuration>
             </plugin>
 
@@ -289,10 +291,10 @@
             </dependency>
 
             <!--<dependency>-->
-                <!--<groupId>org.elasticsearch.plugin</groupId>-->
-                <!--<artifactId>delete-by-query</artifactId>-->
-                <!--<version>${elasticsearch.version}</version>-->
-                <!--<scope>test</scope>-->
+            <!--<groupId>org.elasticsearch.plugin</groupId>-->
+            <!--<artifactId>delete-by-query</artifactId>-->
+            <!--<version>${elasticsearch.version}</version>-->
+            <!--<scope>test</scope>-->
             <!--</dependency>-->
             <dependency>
                 <groupId>org.elasticsearch.plugin</groupId>
@@ -412,13 +414,13 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-        
+
             <dependency>
                 <groupId>com.github.spullara.mustache.java</groupId>
                 <artifactId>compiler</artifactId>
                 <version>${mustache.version}</version>
                 <scope>test</scope>
-            </dependency>            
+            </dependency>
 
             <dependency>
                 <groupId>net.java.dev.jna</groupId>
@@ -514,13 +516,18 @@
                                     <excludes>
                                         <exclude>none</exclude>
                                     </excludes>
-                                    <argLine>-Xmx${tests.heap.size} -Xms${tests.heap.size} -Dtests.heap.size=${tests.heap.size} -Djava.net.preferIPv4Stack=true -Dtests.security.manager=false</argLine>
+                                    <argLine>-Xmx${tests.heap.size} -Xms${tests.heap.size}
+                                        -Dtests.heap.size=${tests.heap.size} -Djava.net.preferIPv4Stack=true
+                                        -Dtests.security.manager=false
+                                    </argLine>
                                     <reuseForks>false</reuseForks>
                                 </configuration>
                             </execution>
                         </executions>
                         <configuration>
-                            <argLine>-Xmx${tests.heap.size} -Xms${tests.heap.size} -Dtests.heap.size=${tests.heap.size} -Dtests.security.manager=false</argLine>
+                            <argLine>-Xmx${tests.heap.size} -Xms${tests.heap.size} -Dtests.heap.size=${tests.heap.size}
+                                -Dtests.security.manager=false
+                            </argLine>
                             <reuseForks>false</reuseForks>
                         </configuration>
                     </plugin>
