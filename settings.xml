@@ -28,8 +28,8 @@
                         <enabled>false</enabled>
                     </snapshots>
                     <id>central</id>
-                    <name>libs-release</name>
-                    <url>https://dataworld.artifactoryonline.com/dataworld/libs-release</url>
+                    <name>dataworld-releases</name>
+                    <url>https://dataworld.jfrog.io/dataworld/libs-release-local</url>
                 </repository>
                 <repository>
                     <snapshots/>
